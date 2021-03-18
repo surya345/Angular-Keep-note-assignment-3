@@ -1,0 +1,16 @@
+<form (ngSubmit)="loginSubmit()" novalidate>
+    <strong *ngIf="submitMessage" class="error-message">{{submitMessage}}</strong>
+  
+     <mat-form-field>
+        <input class="username" matInput placeholder="UserName" [formControl] = 'username' required>
+        <mat-error *ngIf="username.invalid">{{get_username_error()}}</mat-error>
+     </mat-form-field>
+     
+     <mat-form-field>
+        <input class="password" type="password" matInput placeholder="Password" [formControl]='password' required>
+        <mat-error *ngIf="password.invalid">{{get_password_error()}}</mat-error> 
+     </mat-form-field>
+  
+    <button type="submit">Submit</button>
+      
+  </form>
